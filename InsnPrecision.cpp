@@ -40,20 +40,11 @@ bool isSSE(INS ins)
 {
     // extract instruction info
     INT32 icategory = INS_Category(ins);
-    INT32 iextension = INS_Extension(ins);
 
     // check for floating-point instructions
-    return (
-        icategory == XED_CATEGORY_SSE ||
-        icategory == XED_CATEGORY_AVX ||
-        icategory == XED_CATEGORY_AVX2 ||
-        iextension == XED_EXTENSION_SSE ||
-        iextension == XED_EXTENSION_SSE2 ||
-        iextension == XED_EXTENSION_SSE3 ||
-        iextension == XED_EXTENSION_SSE4 ||
-        iextension == XED_EXTENSION_SSE4A ||
-        iextension == XED_EXTENSION_SSSE3
-    );
+    return (icategory == XED_CATEGORY_SSE ||
+            icategory == XED_CATEGORY_AVX ||
+            icategory == XED_CATEGORY_AVX2);
 }
 
 /*
