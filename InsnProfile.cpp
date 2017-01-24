@@ -1,6 +1,7 @@
 #include "pin.H"
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <iomanip>
 #include <vector>
 #include <sstream>
