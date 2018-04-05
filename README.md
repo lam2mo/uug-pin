@@ -58,9 +58,9 @@ The easiest way to create your own Pintool is just to copy one of the existing
 `TEST_TOOL_ROOTS` variable in `Makefile.rules`.
 
 For more information, see the [Building Your Own
-Tool](https://software.intel.com/sites/landingpage/pintool/docs/76991/Pin/html/index.html#BUILDINGTOOLS)
+Tool](https://software.intel.com/sites/landingpage/pintool/docs/97554/Pin/html/index.html#BUILDINGTOOLS)
 section of the [User
-Manual](https://software.intel.com/sites/landingpage/pintool/docs/76991/Pin/html/)
+Manual](https://software.intel.com/sites/landingpage/pintool/docs/97554/Pin/html/)
 as well as the [API
-Reference](https://software.intel.com/sites/landingpage/pintool/docs/76991/Pin/html/group__API__REF.html).
+Reference](https://software.intel.com/sites/landingpage/pintool/docs/97554/Pin/html/group__API__REF.html).
 
