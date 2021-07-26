@@ -4,6 +4,8 @@
 #include <iomanip>
 #include <vector>
 
+using namespace std;
+
 UINT32 numFuncs = 0;
 
 vector<string> name;
@@ -42,18 +44,18 @@ VOID printResults (INT32 code, VOID *v)
     UINT64 totalExecs = 0;
     for (UINT32 i = 0; i < numFuncs; i++) {
         if (fcount[i] > 0) {
-            cout << setw(10) << fcount[i] << "  " << name[i] << endl;
+            std::cout << setw(10) << fcount[i] << "  " << name[i] << std::endl;
             totalExecs += fcount[i];
         }
     }
-    cout << "Total function execution count: " << totalExecs << endl;
+    std::cout << "Total function execution count: " << totalExecs << std::endl;
 }
 
 int main(int argc, char *argv[])
 {
     // initialize Pin
     if (PIN_Init(argc,argv)) {
-        cout << "Usage: pin -t <tool name> -- <exefile>" << endl;
+        std::cout << "Usage: pin -t <tool name> -- <exefile>" << std::endl;
         return -1;
     }
     PIN_InitSymbols();

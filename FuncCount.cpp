@@ -1,6 +1,8 @@
 #include "pin.H"
 #include <iostream>
 
+using namespace std;
+
 UINT64 funcCount = 0;   // total # of functions executed
 
 /*
@@ -27,15 +29,15 @@ VOID instrumentFunction (RTN func, VOID *v)
  */
 VOID printResults (INT32 code, VOID *v)
 {
-    cout << "Total function execution count: " << funcCount << endl;
-    cout << "Exit code: " << code << endl;
+    std::cout << "Total function execution count: " << funcCount << std::endl;
+    std::cout << "Exit code: " << code << std::endl;
 }
 
 int main(int argc, char *argv[])
 {
     // initialize Pin
     if (PIN_Init(argc,argv)) {
-        cout << "Usage: pin -t <tool name> -- <exefile>" << endl;
+        std::cout << "Usage: pin -t <tool name> -- <exefile>" << std::endl;
         return -1;
     }
 

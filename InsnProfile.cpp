@@ -5,10 +5,13 @@
 #include <vector>
 #include <sstream>
 
+using namespace std;
+
 UINT32 numInsns = 0;
 
 vector<ADDRINT> addr;
 vector<string>  disas;
+vector<string>  ext;
 vector<string>  fname;
 vector<string>  srcloc;
 vector<UINT64>  icount;
@@ -47,6 +50,7 @@ VOID instrumentInstruction (INS insn, VOID *v)
         UINT32 newID = numInsns++;
         addr.push_back(INS_Address(insn));
         disas.push_back(INS_Disassemble(insn));
+        ext.push_back(EXTENSION_StringShort(INS_Extension(insn)));
         fname.push_back(PIN_UndecorateSymbolName(RTN_Name(INS_Rtn(insn)),
                                                  UNDECORATION_NAME_ONLY));
 
@@ -73,19 +77,19 @@ VOID printResults (INT32 code, VOID *v)
     UINT64 totalExecs = 0;
     for (UINT32 i = 0; i < numInsns; i++) {
         if (icount[i] > 0) {
-            cout << setw(10) << icount[i] << "  " << fname[i] << ": "
-                << disas[i] << "  src=" << srcloc[i] <<endl;
+            std::cout << setw(10) << icount[i] << "  " << fname[i] << ": "
+                << disas[i] << " ext=" << ext[i] << "  src=" << srcloc[i] <<std::endl;
             totalExecs += icount[i];
         }
     }
-    cout << "Total instruction execution count: " << totalExecs << endl;
+    std::cout << "Total instruction execution count: " << totalExecs << std::endl;
 }
 
 int main(int argc, char *argv[])
 {
     // initialize Pin
     if (PIN_Init(argc,argv)) {
-        cout << "Usage: pin -t <tool name> -- <exefile>" << endl;
+        std::cout << "Usage: pin -t <tool name> -- <exefile>" << std::endl;
         return -1;
     }
     PIN_InitSymbols();

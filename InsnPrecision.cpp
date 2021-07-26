@@ -10,6 +10,8 @@ extern "C" {
 #include <vector>
 #include <sstream>
 
+using namespace std;
+
 const UINT8 OE = 0x08;      // overflow
 const UINT8 UE = 0x10;      // underflow
 const UINT8 PE = 0x20;      // precision
@@ -131,14 +133,14 @@ VOID printResults (INT32 code, VOID *v)
 
             // only print "interesting" instructions
             if (ecount[i] > 100 && (pct > .01 && pct < .99)) {
-                cout << setw(15) << right << xcount[i] << " of "
+                std::cout << setw(15) << right << xcount[i] << " of "
                     << setw(15) << left << ecount[i]
                     << " (" << setprecision(3) << (pct*100.0) << "\%)"
                     << " in " << fname[i]
                     << ": " << disas[i]
                     //<< "  addr=0x" << addr[i]     // ugly
                     << "  src=" << srcloc[i]
-                    << endl;
+                    << std::endl;
             }
 
             // update histograms
@@ -156,29 +158,29 @@ VOID printResults (INT32 code, VOID *v)
             totalExceps += xcount[i];
         }
     }
-    cout << "Instruction histogram: " << endl;
-    cout << "  =  0\%: " << ihistogram[0] << endl;
+    std::cout << "Instruction histogram: " << std::endl;
+    std::cout << "  =  0\%: " << ihistogram[0] << std::endl;
     for (int i = 1; i < 11; i++) {
-        cout << "  <" << setw(3) << (i*10) << "\%: " << ihistogram[i] << endl;
+        std::cout << "  <" << setw(3) << (i*10) << "\%: " << ihistogram[i] << std::endl;
     }
-    cout << "  =100\%: " << ihistogram[11] << endl;
-    cout << "Execution histogram: " << endl;
-    cout << "  =  0\%: " << ehistogram[0] << endl;
+    std::cout << "  =100\%: " << ihistogram[11] << std::endl;
+    std::cout << "Execution histogram: " << std::endl;
+    std::cout << "  =  0\%: " << ehistogram[0] << std::endl;
     for (int i = 1; i < 11; i++) {
-        cout << "  <" << setw(3) << (i*10) << "\%: " << ehistogram[i] << endl;
+        std::cout << "  <" << setw(3) << (i*10) << "\%: " << ehistogram[i] << std::endl;
     }
-    cout << "  =100\%: " << ehistogram[11] << endl;
-    cout << "Total executions: " << setw(15) << right << totalExecs << endl;
-    cout << "Total exceptions: " << setw(15) << right << totalExceps << " ("
+    std::cout << "  =100\%: " << ehistogram[11] << std::endl;
+    std::cout << "Total executions: " << setw(15) << right << totalExecs << std::endl;
+    std::cout << "Total exceptions: " << setw(15) << right << totalExceps << " ("
         << setprecision(3) << ((float)totalExceps / (float)totalExecs * 100.0)
-        << "\%)" << endl;
+        << "\%)" << std::endl;
 }
 
 int main(int argc, char *argv[])
 {
     // initialize Pin
     if (PIN_Init(argc,argv)) {
-        cout << "Usage: pin -t <tool name> -- <exefile>" << endl;
+        std::cout << "Usage: pin -t <tool name> -- <exefile>" << std::endl;
         return -1;
     }
     PIN_InitSymbols();
