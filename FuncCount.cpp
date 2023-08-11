@@ -1,6 +1,9 @@
 #include "pin.H"
 #include <iostream>
 
+using std::cout;
+using std::endl;
+
 UINT64 funcCount = 0;   // total # of functions executed
 
 /*

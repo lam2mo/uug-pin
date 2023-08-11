@@ -6,6 +6,11 @@
 #include <vector>
 #include <sstream>
 
+using std::cout;
+using std::endl;
+using std::string;
+using std::vector;
+
 UINT32 numInsns = 0;
 
 vector<ADDRINT> addr;
@@ -55,7 +60,7 @@ VOID instrumentInstruction (INS insn, VOID *v)
         INT32 line, col;
         string fn;
         PIN_GetSourceLocation(INS_Address(insn), &col, &line, &fn);
-        stringstream ss("");
+        std::stringstream ss("");
         ss << "[" << stripPath(fn.c_str()) << ":" << line << "]";
         srcloc.push_back(ss.str());
 
@@ -74,7 +79,7 @@ VOID printResults (INT32 code, VOID *v)
     UINT64 totalExecs = 0;
     for (UINT32 i = 0; i < numInsns; i++) {
         if (icount[i] > 0) {
-            cout << setw(10) << icount[i] << "  " << fname[i] << ": "
+            cout << std::setw(10) << icount[i] << "  " << fname[i] << ": "
                 << disas[i] << "  src=" << srcloc[i] <<endl;
             totalExecs += icount[i];
         }

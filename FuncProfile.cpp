@@ -4,6 +4,11 @@
 #include <iomanip>
 #include <vector>
 
+using std::cout;
+using std::endl;
+using std::string;
+using std::vector;
+
 UINT32 numFuncs = 0;
 
 vector<string> name;
@@ -42,7 +47,7 @@ VOID printResults (INT32 code, VOID *v)
     UINT64 totalExecs = 0;
     for (UINT32 i = 0; i < numFuncs; i++) {
         if (fcount[i] > 0) {
-            cout << setw(10) << fcount[i] << "  " << name[i] << endl;
+            cout << std::setw(10) << fcount[i] << "  " << name[i] << endl;
             totalExecs += fcount[i];
         }
     }
