@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export PIN_ROOT="$HOME/opt/pin-3.6-97554-g31f0a167d-gcc-linux"
+export PIN_ROOT="$HOME/opt/pin-3.30-98830-g1d7b601b3-gcc-linux"
 

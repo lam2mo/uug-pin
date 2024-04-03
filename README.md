@@ -57,10 +57,7 @@ The easiest way to create your own Pintool is just to copy one of the existing
 `.cpp` files and modify it. You will need to add your new tool to the
 `TEST_TOOL_ROOTS` variable in `Makefile.rules`.
 
-For more information, see the [Building Your Own
-Tool](https://software.intel.com/sites/landingpage/pintool/docs/97554/Pin/html/index.html#BUILDINGTOOLS)
-section of the [User
-Manual](https://software.intel.com/sites/landingpage/pintool/docs/97554/Pin/html/)
-as well as the [API
-Reference](https://software.intel.com/sites/landingpage/pintool/docs/97554/Pin/html/group__API__REF.html).
+For more information, see the [Building Your Own Tool](https://software.intel.com/sites/landingpage/pintool/docs/98830/Pin/doc/html/index.html#BUILDINGTOOLS)
+section of the [User Manual](https://software.intel.com/sites/landingpage/pintool/docs/98830/Pin/doc/html/index.html)
+as well as the [API Reference](https://software.intel.com/sites/landingpage/pintool/docs/98830/Pin/doc/html/group__API__REF.html).
 
