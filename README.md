@@ -22,7 +22,7 @@ First, you must make sure that the `PIN_ROOT` environment variable is set to
 the installation directory. If you use Bash and the provided installation
 script worked for you, you can use the provided environment setup script:
 
-    source /setup_env.sh
+    source ./setup_env.sh
 
 If you installed Pin to a different location, you will need to modify the
 script or just set `PIN_ROOT` manually.
