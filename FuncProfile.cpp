@@ -28,6 +28,11 @@ VOID incrementFuncCount (UINT32 id)
  */
 VOID instrumentFunction (RTN func, VOID *v)
 {
+    /* skip Pin-created "functions" */
+    if (RTN_IsArtificial(func)) {
+        return;
+    }
+
     UINT32 newID = numFuncs++;
     name.push_back(PIN_UndecorateSymbolName(RTN_Name(func),
                                             UNDECORATION_NAME_ONLY));
