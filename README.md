@@ -51,6 +51,24 @@ traceroute:
 Note that (as with compilation) this will fail if you don't have `$PIN_ROOT`
 set to the Pin installation folder.
 
+Included Pintools:
+
+  * **HelloWorld** - Prints a hello message before the program begins, and a
+    goodbye message (with exit code) after the program ends.
+
+  * **MemWriteTrace** - Creates a file called `atrace.out` with a list of all
+    memory writes, with the instruction address, the effective address of the
+    access, and the number of bytes written.
+
+  * **FuncCount** - Prints a single count of the total number of functions
+    called at the end of execution.
+
+  * **FuncProfile** - Prints a list of all functions called during execution
+    alongside a count of how many times that function was run.
+
+  * **InsnProfile** - Similar to FuncProfile, but instruments at the instruction
+    level instead of the function level.
+  
 ## Writing Pintools
 
 The easiest way to create your own Pintool is just to copy one of the existing
