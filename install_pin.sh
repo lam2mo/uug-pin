@@ -1,8 +1,8 @@
 #!/bin/bash
 
 INSTALL_DIR="$HOME/opt"
-WEB_DIR="http://software.intel.com/sites/landingpage/pintool/downloads"
-TARBALL="pin-3.30-98830-g1d7b601b3-gcc-linux.tar.gz"
+WEB_DIR="https://software.intel.com/sites/landingpage/pintool/downloads/"
+TARBALL="pin-external-4.0-99633-g5ca9893f2-gcc-linux.tar.gz"
 
 mkdir -p "$INSTALL_DIR"
 cd "$INSTALL_DIR"
